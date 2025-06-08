@@ -20,8 +20,9 @@ app.add_middleware(
 
 # DB setup
 
-mongo_uri = os.getenv("MONGO_URI")
-client = MongoClient(mongo_uri)
+MONGO_URI = os.getenv("MONGO_URI")
+
+client = MongoClient(MONGO_URI, tls=True)
 db = client["portfolio_db"]
 users = db["users"]
 portfolios = db["portfolios"]

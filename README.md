@@ -58,9 +58,13 @@ streamlit run frontend/app.py
 
 ## 🌍 Deployment
 
-Deploy on platforms like **Render**. Make sure to:
+Deploy Backend on platforms like **Render**. Make sure to:
 - Set MongoDB connection string as environment variable
 - Allow CORS for frontend-backend interaction
+
+Deploy Frontend on platforms like **Streamlit Cloud**. Make sure to:
+- Set backend API endpoint(render url) as environment variable
+- Some times the streamlit cloud may take timee loading due to the inactivity of render after 50s.
 
 ---
 

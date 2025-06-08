@@ -1,8 +1,14 @@
 import streamlit as st
 import requests
 import json
+from dotenv import load_dotenv
+import os
 
-API = "http://localhost:8000"
+load_dotenv()
+api_key = os.getenv("API")
+
+
+API = api_key
 
 if 'logged_in' not in st.session_state:
     st.session_state.logged_in = False

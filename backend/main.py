@@ -5,6 +5,7 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 import hashlib
+import os
 
 app = FastAPI()
 
@@ -18,7 +19,9 @@ app.add_middleware(
 )
 
 # DB setup
-client = MongoClient("mongodb://localhost:27017")
+
+mongo_uri = os.getenv("MONGO_URI")
+client = MongoClient(mongo_uri)
 db = client["portfolio_db"]
 users = db["users"]
 portfolios = db["portfolios"]

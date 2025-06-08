@@ -22,6 +22,7 @@ client = MongoClient("mongodb://localhost:27017")
 db = client["portfolio_db"]
 users = db["users"]
 portfolios = db["portfolios"]
+likes = db["likes"]
 
 security = HTTPBasic()
 
@@ -35,10 +36,10 @@ class Portfolio(BaseModel):
     theme: str
     title: str
     overview: str
-    media: list[str]
-    timeline: str
-    tools: list[str]
-    outcomes: str
+    media: list[str] = []
+    timeline: str = ""
+    tools: list[str] = []
+    outcomes: str = ""
     views: int = 0
     likes: int = 0
 

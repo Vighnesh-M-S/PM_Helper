@@ -8,7 +8,7 @@ load_dotenv()
 api_key = os.getenv("API")
 
 
-API = api_key
+API = st.secrets["API"]
 
 if 'logged_in' not in st.session_state:
     st.session_state.logged_in = False
